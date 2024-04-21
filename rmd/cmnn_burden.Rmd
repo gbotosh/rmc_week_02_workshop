@@ -10,7 +10,7 @@ burden_of_disease_cmnn <- read_csv(here("data", "burden-of-disease-cmnn.csv"))
 
 ## Table of Estimates for CMNN Burden Over Time
 
-```{r echo=FALSE, message=FALSE}
+```{r echo=FALSE}
 # Here render a table for the DALY burden over time for the three countries 
 # You should pivot the data to show each country in a separate column.
 # Use kable() from the knitr package to render the table.
@@ -47,7 +47,7 @@ kable(selected_countries_cmnn_wide, format = "html", caption = "DALYS burden of 
 
 ## Plot Showing Trends in CMNN Burden Over Time
 
-```{r echo=FALSE, message=FALSE}
+```{r echo=FALSE}
 # Here, plot a line graph showing the trend of DALY burden for the chosen countries over time. You can use ggplot2 to create this plot. Each country's line should be a different color.
 library(ggplot2)
 selected_countries_cmnn_plots <- ggplot(data = selected_countries_cmnn) +

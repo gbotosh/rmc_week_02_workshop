@@ -1,6 +1,6 @@
 # Overall Disease Burden
 
-```{r message=FALSE, echo=FALSE}
+```{r echo=FALSE, message=FALSE}
 # Load necessary packages
 pacman::p_load(tidyverse, knitr, here, kableExtra)
 
@@ -52,8 +52,10 @@ ggplot(countries, aes(x = Year, y = DALYs , color = Entity)) +
   geom_line() +
   labs(title = "Trend of DALYs Burden Over Time",
        x = "Year",
-       y = "DALY Burden") +
-  theme_minimal()
+       y = "DALY Burden",
+       color = "Country") +
+  theme_minimal() 
+  
 ```
 
 
@@ -77,7 +79,7 @@ cum_dalys <- countries %>%
 #cum_dalys
 
 ggplot(data = cum_dalys, mapping = aes(x = Year, y = cummulative_daly)) +
-              geom_line() +
+              geom_line(color = "red") +
               labs(title = "Cummulative DALYs with Time for Ghana, Jamaica, and Nigeria",
                    x = "Year",
                    y = "Cummulative DALYs for Ghana, Jamaica, and Nigeria") +
