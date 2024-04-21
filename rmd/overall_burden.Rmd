@@ -73,13 +73,12 @@ The burden of DALYs remained stable for Nigeria and Ghana throughout the decade 
 ```{r echo=FALSE}
 # CHALLENGE (OPTIONAL)
 #head(countries)
-cum_dalys <- countries %>% 
-              group_by(Year) %>% 
-              summarise(cummulative_daly = sum(DALYs))
+cum_dalys <- countries %>%
+              mutate(cum_overall = round(cumsum(DALYs)))
 #cum_dalys
 
-ggplot(data = cum_dalys, mapping = aes(x = Year, y = cummulative_daly)) +
-              geom_line(color = "red") +
+ggplot(data = cum_dalys, mapping = aes(x = Year, y = cum_overall, color = Entity)) +
+              geom_line() +
               labs(title = "Cummulative DALYs with Time for Ghana, Jamaica, and Nigeria",
                    x = "Year",
                    y = "Cummulative DALYs for Ghana, Jamaica, and Nigeria") +
@@ -89,7 +88,7 @@ ggplot(data = cum_dalys, mapping = aes(x = Year, y = cummulative_daly)) +
 
 ```
 
-
+The cumulative trend indicates the cummulative overall burden in the three countries has grown  over the years covered in the analysis. 
 
 
 

@@ -1,9 +1,7 @@
 ---
 title: "Global Disease Burden Analysis"
 author: "Ifeanyi Okoye, Gbotoso Olaoluwa, Rodrigue " # AUTHOR NAMES HERE!
-output: 
- gfm_document:
-    always_allow_html: true
+output: github_document
 ---
 
 ```{r include = F}
