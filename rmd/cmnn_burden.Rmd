@@ -10,7 +10,7 @@ burden_of_disease_cmnn <- read_csv(here("data", "burden-of-disease-cmnn.csv"))
 
 ## Table of Estimates for CMNN Burden Over Time
 
-```{r echo=FALSE}
+```{r echo=FALSE, message=FALSE}
 # Here render a table for the DALY burden over time for the three countries 
 # You should pivot the data to show each country in a separate column.
 # Use kable() from the knitr package to render the table.
@@ -40,8 +40,7 @@ if (!require("kableExtra")) {
 # Load the kableExtra package
 library(kableExtra)
 # Render the table with kable()
-kable(selected_countries_cmnn_wide, format = "html", caption = "DALYS burden of communicable, maternal, neonatal, and nutritional diseases Over Time for Ghana,Jamaica and Nigeria") %>%
-  kable_styling(bootstrap_options = c("striped", "hover"))
+kable(selected_countries_cmnn_wide, align = "lccc", "pipe", caption = "DALYS burden of communicable, maternal, neonatal, and nutritional diseases Over Time for Ghana,Jamaica and Nigeria") 
 
 ```
 

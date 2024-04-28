@@ -22,7 +22,7 @@ data_ncd2 <- data_ncd %>%
  #data_ncd2
 ```
 
-```{r echo=FALSE}
+```{r echo=FALSE, message=FALSE}
 ncd_data <- data_ncd2 %>% 
   mutate(DALYS = round(DALYS)) %>% 
   select(Entity, Year, DALYS) %>% 

@@ -28,8 +28,8 @@ countries <- data_overall %>%
 countries_wide <- countries %>% 
               select(-Code) %>% 
               pivot_wider(names_from = Entity, values_from = DALYs) %>% 
-              kable(caption = "DALYs Burden for Ghana, Jamaica. and Nigeria") %>% 
-              kable_styling()
+              kable(align = "lccc", "pipe", caption = "DALYs Burden for Ghana, Jamaica. and Nigeria")
+        
 #head(countries)
 countries_wide
 #summary((countries))
